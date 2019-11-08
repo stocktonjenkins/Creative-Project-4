@@ -26,15 +26,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="guest-list.html">Guest List</a>
                 </li>
+                <!--Add photos page later-->
                 <li class="nav-item">
-                    <a class="nav-link" href="photos.html">Photos</a>
+                    <a class="nav-link" href="https://github.com/stocktonjenkins/Creative-Project-4">Github Repo</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div id="app">
-        <div class="container">
+        <div class="container center">
             <h1>Taco Tuesday RSVP</h1>
             <div class="row">
                 <div class="col">
@@ -52,13 +53,18 @@
                             <label for="sizeOfParty">Size of Party</label>
                             <input type="number" class="form-control" id="sizeOfParty" placeholder="Size of Party" v-model="attendee.sizeParty">
                         </div>
-                        <button type="submit" class="btn btn-primary" v-on:click.prevent="saveUserData(); submitted()">Submit</button>
+                        <button type="submit" class="btn btn-primary" v-on:click.prevent="saveUserData(); submitted(attendee.firstName)">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="footer">
+        <div>
+            
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>

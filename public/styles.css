@@ -1,0 +1,39 @@
+.center {
+    display: block;
+    margin:auto;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    margin: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+
+}
+
+h1 {
+    text-align: center;
+    font-family: Optima, sans-serif;
+    font-size: 75;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    color: gray;
+    text-align: center;
+    margin-top: 2em;
+    position: fixed;
+}
+
+.container {
+    margin: 20px;
+}

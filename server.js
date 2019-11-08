@@ -28,7 +28,7 @@ router.get('/get-guest-list', (req, res) => {
     let guestList = [];
     var list = fs.readFileSync('rsvpForm.txt', 'utf8');
     let lines = list.split("\n");
-    console.log("lines: ", lines);
+    // console.log("lines: ", lines);
 
     lines.forEach(line => {
         let elements = line.split(" ");
@@ -44,4 +44,4 @@ router.get('/get-guest-list', (req, res) => {
     res.send(guestList);
 });
 
-router.listen(3010, () => console.log('Server is listening on port 3010.'));
+router.listen(3001, () => console.log('Server is listening on port 3001.'));

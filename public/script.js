@@ -37,8 +37,8 @@ var app = new Vue({
 
                 });
         },
-        submitted() {
-            swal("Success!", "We'll see you at Taco Tuesday! 🌮", "success");
+        submitted(firstName) {
+            swal("Success!", "We'll see you at Taco Tuesday, " +  firstName + "! 🌮", "success");
             console.log("submitted");
             document.getElementById('tacoForm').reset();
         },
