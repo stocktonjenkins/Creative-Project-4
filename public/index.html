@@ -52,6 +52,7 @@
                         <div class="form-group">
                             <label for="sizeOfParty">Size of Party</label>
                             <input type="number" class="form-control" id="sizeOfParty" placeholder="Size of Party" v-model="attendee.sizeParty">
+                            <small id="sizeOfParty" class="form-text text-muted">How many people are coming with you?</small>
                         </div>
                         <button type="submit" class="btn btn-primary" v-on:click.prevent="saveUserData(); submitted(attendee.firstName)">Submit</button>
                     </form>
