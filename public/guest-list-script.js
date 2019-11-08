@@ -10,10 +10,48 @@ var app = new Vue({
             lastName: '',
             sizeParty: ''
         },
+        guestList: '',
     },
     methods: {
         fetchREST() {
             console.log("Made fetch");
+            var url = '/get-guest-list';
+            fetch(url)
+              .then(data => {
+                  return data.json();
+              })
+              .then(json => {
+                  console.log('json: ', json);
+                  this.displayGuestList(json);
+              });
+        },
+        displayGuestList(guestList) {
+            console.log("display table");
+            var tableString = 
+            "<table class='table'>" +
+                "<thead>" +
+                "<tr>" +
+                    "<th scope='col'>#</th>" +
+                    "<th scope='col'>First Name</th>" +
+                    "<th scope='col'>Last Name</th>" +
+                    "<th scope='col'>Size of Party</th>" +
+                "</tr>"+
+                "</thead>" +
+                "<tbody>";
+            let counter = 1;
+                guestList.forEach(guest => {
+                   tableString = tableString +
+                        "<tr>" +
+                            "<th scope='row'>" + counter + "</th>" +
+                            "<td>" + guest.firstName + "</td>" + 
+                            "<td>" + guest.lastName + "</td>" +
+                            "<td>" + guest.sizeParty + "</td>" +
+                        "</tr>";
+                    counter++;
+                });
+                
+            tableString += "</tbody> </table>";
+            document.getElementById("guestListTable").innerHTML = tableString;
         }
     }
 });

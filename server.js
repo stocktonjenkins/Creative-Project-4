@@ -25,9 +25,23 @@ router.post('/write-new-user', (req, res) => {
 });
 
 router.get('/get-guest-list', (req, res) => {
-   console.log("In get!"); 
+    let guestList = [];
+    var list = fs.readFileSync('rsvpForm.txt', 'utf8');
+    let lines = list.split("\n");
+    console.log("lines: ", lines);
+
+    lines.forEach(line => {
+        let elements = line.split(" ");
+        let guest = {
+            firstName: elements[0],
+            lastName: elements[1],
+            sizeParty: elements[2]
+        };
+        guestList.push(guest);
+    });
+    guestList.pop();
+    // console.log("guest list: ", guestList);
+    res.send(guestList);
 });
-
-
 
 router.listen(3010, () => console.log('Server is listening on port 3010.'));
